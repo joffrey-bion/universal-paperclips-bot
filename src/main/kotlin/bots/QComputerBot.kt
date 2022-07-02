@@ -9,7 +9,10 @@ import kotlin.time.Duration.Companion.milliseconds
 class QComputerBot(
     override var period: Duration = 200.milliseconds,
     var hitsPerTick: Int = 10000,
-) : MicroBot("q-computer") {
+) : MicroBot(
+    name = "Q-Computer",
+    description = "Hits the quantum computer when the chips give positive ops",
+) {
 
     override fun onTick() {
         if (!isQComputerDiscovered()) {

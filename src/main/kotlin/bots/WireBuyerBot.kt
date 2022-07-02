@@ -13,8 +13,10 @@ class WireBuyerBot(
     override var period: Duration = 80.milliseconds,
     var minMoneyToKeep: Int = 0,
     var loggingEnabled: Boolean = true,
-) : MicroBot("wire-buyer") {
-
+) : MicroBot(
+    name = "Wire buyer",
+    description = "Buys wire spools when there is enough money and it's worth it based on min sell price",
+) {
     override fun onTick() {
         val currentWirePrice = wireCost.toLong()
         val currentWireSupply = wireSupply.toLong()
